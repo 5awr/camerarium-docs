@@ -1,48 +1,235 @@
-
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Camerarium - カメラ機材カタログアプリ</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Camerarium 写真家のためのカメラ機材カタログアプリ"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          system-ui, sans-serif;
+        line-height: 1.6;
+        color: white;
+        background: black;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        padding: 60px 20px 40px;
+      }
+
+      .app-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .app-name {
+        font-size: 2.5em;
+        font-weight: 300;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+
+      .app-subtitle {
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 300;
+      }
+
+      /* Navigation */
+      .nav {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        background: black;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav a {
+        display: block;
+        padding: 20px 24px;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        color: white;
+        border-bottom-color: white;
+      }
+
+      /* Content */
+      .content {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      h2 {
+        font-size: 1.4em;
+        margin: 40px 0 20px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      h3 {
+        font-size: 1.2em;
+        margin: 24px 0 12px 0;
+        font-weight: 500;
+      }
+
+      p {
+        margin-bottom: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+      }
+
+      /* Simple cards */
+      .info-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 24px;
+        margin: 24px 0;
+      }
+
+      .info-box h3 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .info-box p {
+        margin-bottom: 0;
+      }
+
+      /* Lists */
+      ul {
+        margin: 20px 0;
+      }
+
+      li {
+        list-style: none;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.8);
+        position: relative;
+        padding-left: 20px;
+      }
+
+      li::before {
+        content: "•";
+        color: white;
+        position: absolute;
+        left: 0;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: rgba(255, 255, 255, 0.6);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .app-name {
+          font-size: 2em;
+        }
+        .content {
+          padding: 30px 16px;
+        }
+        .nav a {
+          padding: 16px 20px;
+          font-size: 0.9em;
+        }
+        .nav-container {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>📷 Camerarium</h1>
-            <p class="subtitle">写真家のためのカメラ機材カタログアプリ</p>
-        </header>
+      <div class="header">
+        <div class="app-icon">📷</div>
+        <h1 class="app-name">Camerarium</h1>
+        <p class="app-subtitle">写真家のためのカメラ機材カタログアプリ</p>
+      </div>
 
-        <main>
-            <section>
-                <h2>について</h2>
-                <p>Camerariumは、カメラ、レンズ、フィルムなどの撮影機材を記録し、どの機材でどんな写真を撮ったかを管理するためのアプリです。EXIF情報の自動抽出やフィルム写真の手動入力に対応しています。</p>
-            </section>
+      <nav class="nav">
+        <div class="nav-container">
+          <a href="privacy.html">🔒 プライバシーポリシー</a>
+          <a href="terms.html">📋 利用規約</a>
+        </div>
+      </nav>
 
-            <section>
-                <h2>主な機能</h2>
-                <ul>
-                    <li>EXIF情報からカメラとレンズを自動認識</li>
-                    <li>フィルム写真の撮影情報を手動入力</li>
-                    <li>カメラ、レンズ、フィルムごとに写真を整理</li>
-                    <li>絞り値、シャッタースピード、ISO感度でフィルタリング・ソート</li>
-                    <li>すべてのデータはデバイスにローカル保存</li>
-                </ul>
-            </section>
+      <div class="content">
+        <h2>📖 について</h2>
+        <p>
+          Camerariumは、カメラ、レンズ、フィルムなどの撮影機材を記録し、どの機材でどんな写真を撮ったかを管理するためのアプリです。EXIF情報の自動抽出やフィルム写真の手動入力に対応しています。
+        </p>
 
-            <section>
-                <h2>リンク</h2>
-                <ul class="links">
-                    <li><a href="privacy.html">プライバシーポリシー</a></li>
-                    <li><a href="terms.html">利用規約</a></li>
-                </ul>
-            </section>
-        </main>
+        <h2>✨ 主な機能</h2>
+        <ul>
+          <li>EXIF情報からカメラとレンズを自動認識</li>
+          <li>フィルム写真の撮影情報を手動入力</li>
+          <li>カメラ、レンズ、フィルムごとに写真を整理</li>
+          <li>絞り値、シャッタースピード、ISO感度でフィルタリング・ソート</li>
+          <li>すべてのデータはデバイスにローカル保存</li>
+        </ul>
+      </div>
 
-        <footer>
-            <p>&copy; 2024 Camerarium. All rights reserved.</p>
-        </footer>
+      <div class="footer">
+        <p>
+          &copy; 2025 Camerarium. All rights reserved. Made with ❤️ for
+          photographers.
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>

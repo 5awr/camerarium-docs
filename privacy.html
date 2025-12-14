@@ -1,96 +1,361 @@
-
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プライバシーポリシー - Camerarium</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camerarium - Privacy Policy</title>
+    <meta
+      name="description"
+      content="Camerarium カメラ機材カタログアプリのプライバシーポリシー"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          system-ui, sans-serif;
+        line-height: 1.6;
+        color: white;
+        background: black;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        padding: 60px 20px 40px;
+      }
+
+      .app-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .app-name {
+        font-size: 2.5em;
+        font-weight: 300;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+
+      .app-subtitle {
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 300;
+      }
+
+      /* Navigation */
+      .nav {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        background: black;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav a {
+        display: block;
+        padding: 20px 24px;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        color: white;
+        border-bottom-color: white;
+      }
+
+      /* Content */
+      .content {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      h2 {
+        font-size: 1.4em;
+        margin: 40px 0 20px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-weight: 500;
+      }
+
+      h3 {
+        font-size: 1.2em;
+        margin: 24px 0 12px 0;
+        font-weight: 500;
+      }
+
+      p {
+        margin-bottom: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+      }
+
+      strong {
+        color: white;
+      }
+
+      /* Simple cards */
+      .info-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 24px;
+        margin: 24px 0;
+      }
+
+      .info-box h3 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .info-box p {
+        margin-bottom: 0;
+      }
+
+      /* Lists */
+      ul {
+        margin: 20px 0;
+      }
+
+      li {
+        list-style: none;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.8);
+        position: relative;
+        padding-left: 20px;
+      }
+
+      li::before {
+        content: "•";
+        color: white;
+        position: absolute;
+        left: 0;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      /* Contact section */
+      .contact-section {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 32px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .contact-email {
+        display: inline-block;
+        padding: 12px 24px;
+        background: white;
+        color: black;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        margin-top: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-email:hover {
+        opacity: 0.8;
+      }
+
+      /* Last updated */
+      .last-updated {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 0.9em;
+        margin-bottom: 24px;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: rgba(255, 255, 255, 0.6);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .app-name {
+          font-size: 2em;
+        }
+        .content {
+          padding: 30px 16px;
+        }
+        .nav a {
+          padding: 16px 20px;
+          font-size: 0.9em;
+        }
+        .nav-container {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>プライバシーポリシー</h1>
-            <p class="last-updated">最終更新日：2025年12月15日</p>
-        </header>
+      <div class="header">
+        <div class="app-icon">📷</div>
+        <h1 class="app-name">Camerarium</h1>
+        <p class="app-subtitle">写真家のためのカメラ機材カタログアプリ</p>
+      </div>
 
-        <main>
-            <section>
-                <h2>1. 収集する情報</h2>
-                <p>Camerariumは、以下の情報をお客様のデバイス内にローカル保存します：</p>
-                <ul>
-                    <li>アプリに追加された写真</li>
-                    <li>写真から抽出されたEXIFメタデータ（カメラモデル、レンズ、絞り値、シャッタースピード、ISO感度、焦点距離、撮影日時）</li>
-                    <li>手動で入力されたカメラ、レンズ、フィルムの情報</li>
-                    <li>写真に追加されたメモ</li>
-                </ul>
-            </section>
+      <nav class="nav">
+        <div class="nav-container">
+          <a href="privacy.html" class="active">🔒 プライバシーポリシー</a>
+          <a href="terms.html">📋 利用規約</a>
+        </div>
+      </nav>
 
-            <section>
-                <h2>2. 情報の使用目的</h2>
-                <p>収集されたすべてのデータは、アプリの機能のためにのみ使用されます：</p>
-                <ul>
-                    <li>撮影機材と写真の整理・カタログ化</li>
-                    <li>写真のメタデータと撮影設定の表示</li>
-                    <li>写真コレクションのフィルタリングとソート</li>
-                </ul>
-            </section>
+      <div class="content">
+        <h1>🔒 プライバシーポリシー</h1>
 
-            <section>
-                <h2>3. データの保存とセキュリティ</h2>
-                <p><strong>現在、すべてのデータは、SwiftDataを使用してお客様のデバイス内にローカル保存されます。</strong></p>
-                <p>現時点では以下を行っていません：</p>
-                <ul>
-                    <li>お客様のデータをサーバーへ送信すること</li>
-                    <li>写真をクラウドにアップロードすること</li>
-                    <li>第三者と情報を共有すること</li>
-                    <li>お客様の使用状況や行動を追跡すること</li>
-                    <li>個人情報を収集すること</li>
-                </ul>
-                <p>将来的に新機能を追加する際にデータの取り扱いが変更される場合は、事前にプライバシーポリシーを更新し、アプリ内でお知らせいたします。</p>
-            </section>
+        <div class="last-updated">📅 最終更新日：2025年12月14日</div>
 
-            <section>
-                <h2>4. 第三者サービス</h2>
-                <p>Camerariumは、独自に第三者の分析、広告、トラッキングサービスを組み込んでいません。</p>
-                <p>なお、App Storeを通じてAppleが収集する基本的な統計情報（ダウンロード数、クラッシュレポート等）については、Appleのプライバシーポリシーに準拠します。</p>
-            </section>
+        <h2>1. 収集する情報</h2>
+        <p>
+          Camerariumは、以下の情報をお客様のデバイス内にローカル保存します：
+        </p>
+        <ul>
+          <li>アプリに追加された写真</li>
+          <li>
+            写真から抽出されたEXIFメタデータ（カメラモデル、レンズ、絞り値、シャッタースピード、ISO感度、焦点距離、撮影日時）
+          </li>
+          <li>手動で入力されたカメラ、レンズ、フィルムの情報</li>
+          <li>写真に追加されたメモ</li>
+        </ul>
 
-            <section>
-                <h2>5. オプション機能（将来予定）</h2>
-                <p>将来的に以下のようなオプション機能を追加する可能性があります：</p>
-                <ul>
-                    <li><strong>クラウドバックアップ：</strong> お客様が選択した場合のみ、データをクラウドに同期</li>
-                    <li><strong>デバイス間同期：</strong> 複数デバイス間でデータを共有</li>
-                    <li><strong>コミュニティ機能：</strong> 他のユーザーと機材情報を共有</li>
-                </ul>
-                <p>これらの機能はすべて<strong>オプション（任意）</strong>であり、お客様の明示的な同意なしに有効化されることはありません。また、これらの機能を追加する際は、本プライバシーポリシーを更新し、アプリ内で事前にお知らせいたします。</p>
-            </section>
+        <h2>2. 情報の使用目的</h2>
+        <p>収集されたすべてのデータは、アプリの機能のためにのみ使用されます：</p>
+        <ul>
+          <li>撮影機材と写真の整理・カタログ化</li>
+          <li>写真のメタデータと撮影設定の表示</li>
+          <li>写真コレクションのフィルタリングとソート</li>
+        </ul>
 
-            <section>
-                <h2>6. お客様の権利</h2>
-                <p>すべてのデータはお客様のデバイス内にローカル保存されているため：</p>
-                <ul>
-                    <li>お客様はデータを完全にコントロールできます</li>
-                    <li>デバイスからアプリを削除することで、すべてのデータを削除できます</li>
-                </ul>
-            </section>
+        <h2>3. データの保存とセキュリティ</h2>
+        <p>
+          <strong
+            >現在、すべてのデータは、SwiftDataを使用してお客様のデバイス内にローカル保存されます。</strong
+          >
+        </p>
+        <p>現時点では以下を行っていません：</p>
+        <ul>
+          <li>お客様のデータをサーバーへ送信すること</li>
+          <li>写真をクラウドにアップロードすること</li>
+          <li>第三者と情報を共有すること</li>
+          <li>お客様の使用状況や行動を追跡すること</li>
+          <li>個人情報を収集すること</li>
+        </ul>
+        <p>
+          将来的に新機能を追加する際にデータの取り扱いが変更される場合は、事前にプライバシーポリシーを更新し、アプリ内でお知らせいたします。
+        </p>
 
-            <section>
-                <h2>7. ポリシーの変更</h2>
-                <p>本プライバシーポリシーは随時更新される場合があります。変更があった場合は、このページに「最終更新日」とともに掲載されます。</p>
-            </section>
+        <h2>4. サブスクリプション（課金）情報</h2>
+        <p>
+          Camerarium Premiumのサブスクリプション購入は、AppleのApp
+          Store決済システムを通じて処理されます。お客様の支払い情報は当アプリで直接収集・保存されることはなく、すべてAppleによって安全に管理されます。
+        </p>
 
-            <section>
-                <h2>8. お問い合わせ</h2>
-                <p>本プライバシーポリシーに関するご質問は、以下までお問い合わせください：</p>
-                <p><strong>メール：</strong> [saw.scenery@gmail.com]</p>
-            </section>
-        </main>
+        <h2>5. 第三者サービス</h2>
+        <p>
+          Camerariumは、独自に第三者の分析、広告、トラッキングサービスを組み込んでいません。
+        </p>
+        <p>
+          なお、App
+          Storeを通じてAppleが収集する基本的な統計情報（ダウンロード数、クラッシュレポート等）については、Appleのプライバシーポリシーに準拠します。
+        </p>
 
-        <footer>
-            <p><a href="index.html">← ホームに戻る</a></p>
-        </footer>
+        <h2>6. オプション機能（将来予定）</h2>
+        <p>将来的に以下のようなオプション機能を追加する可能性があります：</p>
+        <ul>
+          <li>
+            <strong>クラウドバックアップ：</strong>
+            お客様が選択した場合のみ、データをクラウドに同期
+          </li>
+          <li>
+            <strong>デバイス間同期：</strong> 複数デバイス間でデータを共有
+          </li>
+          <li>
+            <strong>コミュニティ機能：</strong>
+            他のユーザーと機材情報を共有
+          </li>
+        </ul>
+        <p>
+          これらの機能はすべて<strong>オプション（任意）</strong>であり、お客様の明示的な同意なしに有効化されることはありません。また、これらの機能を追加する際は、本プライバシーポリシーを更新し、アプリ内で事前にお知らせいたします。
+        </p>
+
+        <h2>7. お客様の権利</h2>
+        <p>
+          すべてのデータはお客様のデバイス内にローカル保存されているため：
+        </p>
+        <ul>
+          <li>お客様はデータを完全にコントロールできます</li>
+          <li>
+            デバイスからアプリを削除することで、すべてのデータを削除できます
+          </li>
+        </ul>
+
+        <h2>8. ポリシーの変更</h2>
+        <p>
+          本プライバシーポリシーは随時更新される場合があります。変更があった場合は、このページに「最終更新日」とともに掲載されます。
+        </p>
+
+        <div class="contact-section">
+          <h2>💬 お問い合わせ</h2>
+          <p>
+            本プライバシーポリシーに関するご質問は、以下までお問い合わせください。
+          </p>
+          <a href="mailto:saw.scenery@gmail.com" class="contact-email">
+            📧 saw.scenery@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          &copy; 2025 Camerarium. All rights reserved. Made with ❤️ for
+          photographers.
+        </p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
