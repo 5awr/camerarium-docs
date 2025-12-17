@@ -53,37 +53,6 @@
         font-weight: 300;
       }
 
-      /* Navigation */
-      .nav {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        position: sticky;
-        top: 0;
-        background: black;
-        z-index: 100;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: center;
-      }
-
-      .nav a {
-        display: block;
-        padding: 20px 24px;
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
-        transition: color 0.3s ease;
-        border-bottom: 2px solid transparent;
-      }
-
-      .nav a:hover,
-      .nav a.active {
-        color: white;
-        border-bottom-color: white;
-      }
-
       /* Content */
       .content {
         padding: 40px 20px;
@@ -201,11 +170,37 @@
 
       /* Footer */
       .footer {
-        text-align: center;
-        padding: 40px 20px;
-        color: rgba(255, 255, 255, 0.6);
+        margin-top: 60px;
+        padding-top: 40px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 40px;
+        text-align: center;
+      }
+
+      .footer-links {
+        margin-bottom: 20px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .footer-links .separator {
+        color: rgba(255, 255, 255, 0.3);
+        margin: 0 12px;
+      }
+
+      .footer p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        margin: 0;
       }
 
       /* Responsive */
@@ -215,13 +210,6 @@
         }
         .content {
           padding: 30px 16px;
-        }
-        .nav a {
-          padding: 16px 20px;
-          font-size: 0.9em;
-        }
-        .nav-container {
-          flex-wrap: wrap;
         }
       }
     </style>
@@ -233,13 +221,6 @@
         <h1 class="app-name">Camerarium</h1>
         <p class="app-subtitle">写真家のためのカメラ機材カタログアプリ</p>
       </div>
-
-      <nav class="nav">
-        <div class="nav-container">
-          <a href="privacy.html">🔒 プライバシーポリシー</a>
-          <a href="terms.html" class="active">📋 利用規約</a>
-        </div>
-      </nav>
 
       <div class="content">
         <h1>📋 利用規約</h1>
@@ -352,7 +333,11 @@
       </div>
 
       <div class="footer">
-        <div>
+        <div class="footer-links">
+          <a href="privacy.html">プライバシーポリシー</a>
+          <span class="separator">|</span>
+          <a href="terms.html">利用規約</a>
+          <span class="separator">|</span>
           <a href="tokushoho.html">特定商取引法に基づく表記</a>
         </div>
         <p>

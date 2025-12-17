@@ -53,37 +53,6 @@
         font-weight: 300;
       }
 
-      /* Navigation */
-      .nav {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        position: sticky;
-        top: 0;
-        background: black;
-        z-index: 100;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: center;
-      }
-
-      .nav a {
-        display: block;
-        padding: 20px 24px;
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
-        transition: color 0.3s ease;
-        border-bottom: 2px solid transparent;
-      }
-
-      .nav a:hover,
-      .nav a.active {
-        color: white;
-        border-bottom-color: white;
-      }
-
       /* Content */
       .content {
         padding: 40px 20px;
@@ -201,11 +170,37 @@
 
       /* Footer */
       .footer {
-        text-align: center;
-        padding: 40px 20px;
-        color: rgba(255, 255, 255, 0.6);
+        margin-top: 60px;
+        padding-top: 40px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 40px;
+        text-align: center;
+      }
+
+      .footer-links {
+        margin-bottom: 20px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .footer-links .separator {
+        color: rgba(255, 255, 255, 0.3);
+        margin: 0 12px;
+      }
+
+      .footer p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 14px;
+        margin: 0;
       }
 
       /* Responsive */
@@ -215,13 +210,6 @@
         }
         .content {
           padding: 30px 16px;
-        }
-        .nav a {
-          padding: 16px 16px;
-          font-size: 0.85em;
-        }
-        .nav-container {
-          flex-wrap: wrap;
         }
         .info-table th,
         .info-table td {
@@ -259,9 +247,7 @@
             <td>
               請求があった場合は遅滞なく開示いたします。<br />
               お問い合わせ先:
-              <a href="mailto:saw.scenery@gmail.com"
-                >saw.scenery@gmail.com</a
-              >
+              <a href="mailto:saw.scenery@gmail.com">saw.scenery@gmail.com</a>
             </td>
           </tr>
           <tr>
@@ -274,9 +260,7 @@
           <tr>
             <th>メールアドレス</th>
             <td>
-              <a href="mailto:saw.scenery@gmail.com"
-                >saw.scenery@gmail.com</a
-              >
+              <a href="mailto:saw.scenery@gmail.com">saw.scenery@gmail.com</a>
             </td>
           </tr>
           <tr>
@@ -287,8 +271,10 @@
             <th>販売価格</th>
             <td>
               <strong>Pro Lifetime:</strong> ¥4,800（買い切り）<br />
-              <strong>Pro Yearly:</strong> ¥3,500/年（自動更新サブスクリプション）<br />
-              <strong>Pro Monthly:</strong> ¥680/月（自動更新サブスクリプション）
+              <strong>Pro Yearly:</strong>
+              ¥3,500/年（自動更新サブスクリプション）<br />
+              <strong>Pro Monthly:</strong>
+              ¥680/月（自動更新サブスクリプション）
               <small
                 >※価格は予告なく変更される場合があります。<br />※消費税込みの価格です。</small
               >
@@ -324,7 +310,7 @@
               • 誤って購入された場合（購入後速やかにご申告いただいた場合）<br />
               <br />
               返金リクエストはAppleサポートへ直接お問い合わせください：<br />
-              
+              <a
                 href="https://reportaproblem.apple.com/"
                 target="_blank"
                 rel="noopener"
@@ -380,6 +366,13 @@
       </div>
 
       <div class="footer">
+        <div class="footer-links">
+          <a href="privacy.html">プライバシーポリシー</a>
+          <span class="separator">|</span>
+          <a href="terms.html">利用規約</a>
+          <span class="separator">|</span>
+          <a href="tokushoho.html">特定商取引法に基づく表記</a>
+        </div>
         <p>
           &copy; 2025 Camerarium. All rights reserved. Made with ❤️ for
           photographers.
