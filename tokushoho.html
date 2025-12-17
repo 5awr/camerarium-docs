@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Camerarium - 特定商取引法に基づく表記</title>
+    <meta
+      name="description"
+      content="Camerarium カメラ機材カタログアプリの特定商取引法に基づく表記"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          system-ui, sans-serif;
+        line-height: 1.6;
+        color: white;
+        background: black;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        min-height: 100vh;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        padding: 60px 20px 40px;
+      }
+
+      .app-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      .app-name {
+        font-size: 2.5em;
+        font-weight: 300;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+
+      .app-subtitle {
+        font-size: 1.1em;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 300;
+      }
+
+      /* Navigation */
+      .nav {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: sticky;
+        top: 0;
+        background: black;
+        z-index: 100;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .nav a {
+        display: block;
+        padding: 20px 24px;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        border-bottom: 2px solid transparent;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        color: white;
+        border-bottom-color: white;
+      }
+
+      /* Content */
+      .content {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      h2 {
+        font-size: 1.4em;
+        margin: 40px 0 20px 0;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-weight: 500;
+      }
+
+      p {
+        margin-bottom: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+      }
+
+      /* Info table */
+      .info-table {
+        width: 100%;
+        margin: 30px 0;
+        border-collapse: collapse;
+      }
+
+      .info-table th,
+      .info-table td {
+        padding: 20px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .info-table th {
+        background: rgba(255, 255, 255, 0.05);
+        width: 35%;
+        font-weight: 500;
+        color: white;
+      }
+
+      .info-table td {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+      }
+
+      .info-table a {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .info-table a:hover {
+        opacity: 0.8;
+      }
+
+      .info-table small {
+        font-size: 0.85em;
+        color: rgba(255, 255, 255, 0.6);
+        display: block;
+        margin-top: 8px;
+      }
+
+      /* Info box */
+      .info-box {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 24px;
+        margin: 24px 0;
+      }
+
+      /* Contact section */
+      .contact-section {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 32px;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      .contact-email {
+        display: inline-block;
+        padding: 12px 24px;
+        background: white;
+        color: black;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        margin-top: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-email:hover {
+        opacity: 0.8;
+      }
+
+      /* Last updated */
+      .last-updated {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 0.9em;
+        margin-bottom: 24px;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 40px 20px;
+        color: rgba(255, 255, 255, 0.6);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 40px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .app-name {
+          font-size: 2em;
+        }
+        .content {
+          padding: 30px 16px;
+        }
+        .nav a {
+          padding: 16px 16px;
+          font-size: 0.85em;
+        }
+        .nav-container {
+          flex-wrap: wrap;
+        }
+        .info-table th,
+        .info-table td {
+          padding: 16px 12px;
+          display: block;
+          width: 100%;
+        }
+        .info-table th {
+          border-bottom: none;
+          padding-bottom: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="app-icon">📷</div>
+        <h1 class="app-name">Camerarium</h1>
+        <p class="app-subtitle">写真家のためのカメラ機材カタログアプリ</p>
+      </div>
+
+      <div class="content">
+        <h1>⚖️ 特定商取引法に基づく表記</h1>
+
+        <div class="last-updated">📅 最終更新日：2025年12月17日</div>
+
+        <table class="info-table">
+          <tr>
+            <th>販売業者</th>
+            <td>沢田 龍之介</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>
+              請求があった場合は遅滞なく開示いたします。<br />
+              お問い合わせ先:
+              <a href="mailto:saw.scenery@gmail.com"
+                >saw.scenery@gmail.com</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>電話番号</th>
+            <td>
+              請求があった場合は遅滞なく開示いたします。
+              <small>※通常のお問い合わせはメールでお願いいたします。</small>
+            </td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th>
+            <td>
+              <a href="mailto:saw.scenery@gmail.com"
+                >saw.scenery@gmail.com</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>運営統括責任者</th>
+            <td>沢田 龍之介</td>
+          </tr>
+          <tr>
+            <th>販売価格</th>
+            <td>
+              <strong>Pro Lifetime:</strong> ¥4,800（買い切り）<br />
+              <strong>Pro Yearly:</strong> ¥3,500/年（自動更新サブスクリプション）<br />
+              <strong>Pro Monthly:</strong> ¥680/月（自動更新サブスクリプション）
+              <small
+                >※価格は予告なく変更される場合があります。<br />※消費税込みの価格です。</small
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>支払方法</th>
+            <td>
+              Apple App Store経由でのお支払い<br />
+              （Apple ID決済：クレジットカード、デビットカード、Apple
+              IDクレジット等）
+            </td>
+          </tr>
+          <tr>
+            <th>支払時期</th>
+            <td>
+              購入確定時に即時決済されます。<br />
+              サブスクリプションは更新時に自動決済されます。
+            </td>
+          </tr>
+          <tr>
+            <th>サービス提供時期</th>
+            <td>購入完了後、即時利用可能となります。</td>
+          </tr>
+          <tr>
+            <th>返品・返金について</th>
+            <td>
+              本サービスはデジタルコンテンツであり、性質上、原則として返品・返金には応じかねます。<br />
+              <br />
+              ただし、以下の場合はApple App
+              Storeの返金ポリシーに従い対応いたします：<br />
+              • アプリの技術的な問題により機能が正常に利用できない場合<br />
+              • 誤って購入された場合（購入後速やかにご申告いただいた場合）<br />
+              <br />
+              返金リクエストはAppleサポートへ直接お問い合わせください：<br />
+              
+                href="https://reportaproblem.apple.com/"
+                target="_blank"
+                rel="noopener"
+                >https://reportaproblem.apple.com/</a
+              >
+              <small
+                >※当方に起因しない理由（お客様の都合による解約等）での返金は致しかねます。</small
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>サブスクリプションの<br />自動更新について</th>
+            <td>
+              <strong>対象プラン:</strong> Pro Yearly、Pro Monthly<br />
+              <br />
+              <strong>自動更新のタイミング:</strong><br />
+              現在のサブスクリプション期間が終了する24時間前に、自動的に更新・課金されます。<br />
+              <br />
+              <strong>キャンセル方法:</strong><br />
+              1. iPhoneの「設定」アプリを開く<br />
+              2. 画面上部のApple IDをタップ<br />
+              3. 「サブスクリプション」をタップ<br />
+              4. 「Camerarium」を選択<br />
+              5. 「サブスクリプションをキャンセル」をタップ<br />
+              <small
+                >※キャンセル後も、現在の購読期間が終了するまではサービスをご利用いただけます。<br />※自動更新をオフにしない限り、サブスクリプションは自動的に継続されます。</small
+              >
+            </td>
+          </tr>
+          <tr>
+            <th>動作環境</th>
+            <td>
+              iOS 18.5以降を搭載したiPhone、iPad
+              <small>※推奨環境: iPhone 12以降、iOS 18.5以降</small>
+            </td>
+          </tr>
+        </table>
+
+        <div class="contact-section">
+          <h2>💬 お問い合わせ</h2>
+          <p>
+            本サービスに関するご質問、ご不明な点がございましたら、下記メールアドレスまでお気軽にお問い合わせください。
+          </p>
+          <a href="mailto:saw.scenery@gmail.com" class="contact-email">
+            📧 saw.scenery@gmail.com
+          </a>
+          <p style="margin-top: 16px">
+            <small
+              >※営業日（月〜金）の3営業日以内に返信いたします。<br />※土日祝日のお問い合わせは、翌営業日以降の対応となります。</small
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          &copy; 2025 Camerarium. All rights reserved. Made with ❤️ for
+          photographers.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
